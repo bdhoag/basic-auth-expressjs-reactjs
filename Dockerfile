@@ -12,6 +12,8 @@ RUN pnpm install --filter ./apps/api...
 
 WORKDIR /app/apps/api
 
+RUN pnpm build
+
 EXPOSE 5000
 
-CMD ["pnpm", "dev"]
+CMD ["node", "dist/server.js"]
