@@ -20,7 +20,7 @@ import {
   FieldSeparator,
 } from "@workspace/ui/components/field"
 import { Input } from "@workspace/ui/components/input"
-import { useSignup } from "@/features/auth/authHooks"
+import { useSignup } from "@/features/auth/auth-hooks"
 import { getApiErrorMessage } from "@/lib/api-error"
 
 const signupSchema = z.object({
@@ -65,7 +65,7 @@ export function SignupForm({
           <form onSubmit={handleSubmit(onSubmit)}>
             <FieldGroup>
               {signupMutation.error && (
-                <div className="bg-destructive/10 text-destructive rounded-lg px-3 py-2 text-sm">
+                <div className="rounded-lg bg-destructive/10 px-3 py-2 text-sm text-destructive">
                   {getApiErrorMessage(signupMutation.error)}
                 </div>
               )}
@@ -135,8 +135,7 @@ export function SignupForm({
                     : "Create Account"}
                 </Button>
                 <FieldDescription className="text-center">
-                  Already have an account?{" "}
-                  <Link to="/login">Sign in</Link>
+                  Already have an account? <Link to="/login">Sign in</Link>
                 </FieldDescription>
               </Field>
             </FieldGroup>

@@ -4,7 +4,7 @@ import { QueryClientProvider } from "@tanstack/react-query"
 import { BrowserRouter } from "react-router-dom"
 import { ThemeProvider } from "@/components/theme-provider"
 import { store } from "@/app/store"
-import { queryClient } from "@/app/queryClient"
+import { queryClient } from "@/app/query-client"
 
 type AppProvidersProps = {
   children: ReactNode

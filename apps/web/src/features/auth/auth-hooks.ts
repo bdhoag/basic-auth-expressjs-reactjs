@@ -1,8 +1,8 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
 import { useNavigate } from "react-router-dom"
 import { useAppDispatch, useAppSelector } from "@/app/store"
-import { setCredentials, setUser, logout } from "@/features/auth/authSlice"
-import { login, signup, getMe, logoutApi } from "@/services/authService"
+import { setCredentials, setUser, logout } from "@/features/auth/auth-slice"
+import { login, signup, getMe, logoutApi } from "@/services/auth-service"
 
 const ME_QUERY_KEY = ["auth", "me"] as const
 

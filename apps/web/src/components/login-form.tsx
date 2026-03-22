@@ -20,7 +20,7 @@ import {
   FieldSeparator,
 } from "@workspace/ui/components/field"
 import { Input } from "@workspace/ui/components/input"
-import { useLogin } from "@/features/auth/authHooks"
+import { useLogin } from "@/features/auth/auth-hooks"
 import { getApiErrorMessage } from "@/lib/api-error"
 
 const loginSchema = z.object({
@@ -61,7 +61,7 @@ export function LoginForm({
           <form onSubmit={handleSubmit(onSubmit)}>
             <FieldGroup>
               {loginMutation.error && (
-                <div className="bg-destructive/10 text-destructive rounded-lg px-3 py-2 text-sm">
+                <div className="rounded-lg bg-destructive/10 px-3 py-2 text-sm text-destructive">
                   {getApiErrorMessage(loginMutation.error)}
                 </div>
               )}
@@ -126,8 +126,7 @@ export function LoginForm({
                   {loginMutation.isPending ? "Signing in…" : "Login"}
                 </Button>
                 <FieldDescription className="text-center">
-                  Don&apos;t have an account?{" "}
-                  <Link to="/signup">Sign up</Link>
+                  Don&apos;t have an account? <Link to="/signup">Sign up</Link>
                 </FieldDescription>
               </Field>
             </FieldGroup>

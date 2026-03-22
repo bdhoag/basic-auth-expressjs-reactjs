@@ -1,8 +1,8 @@
 import axios, { type InternalAxiosRequestConfig } from "axios"
 import { store } from "@/app/store"
-import { setCredentials, logout } from "@/features/auth/authSlice"
+import { setCredentials, logout } from "@/features/auth/auth-slice"
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3000"
+const API_BASE_URL = import.meta.env.VITE_API_URL
 
 export const api = axios.create({
   baseURL: API_BASE_URL,
@@ -13,7 +13,12 @@ interface RetryableRequest extends InternalAxiosRequestConfig {
   _retry?: boolean
 }
 
-const AUTH_ENDPOINTS = ["/auth/login", "/auth/signup", "/auth/refresh", "/auth/logout"]
+const AUTH_ENDPOINTS = [
+  "/auth/login",
+  "/auth/signup",
+  "/auth/refresh",
+  "/auth/logout",
+]
 
 function isAuthEndpoint(url: string | undefined): boolean {
   if (!url) return false

@@ -4,7 +4,7 @@ import { GuestRoute } from "@/routes/guest-route"
 import { ProtectedRoute } from "@/routes/protected-route"
 import LoginPage from "@/pages/login"
 import SignupPage from "@/pages/signup"
-import { DashboardPage } from "@/pages/dashboard"
+import DashboardPage from "@/pages/dashboard"
 import { NotFoundPage } from "@/pages/not-found"
 
 export function AppRoutes() {
