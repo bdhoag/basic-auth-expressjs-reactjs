@@ -1,6 +1,6 @@
 import { Router, type IRouter } from "express"
-import { getMe } from "../controllers/authController"
-import { protect } from "../middleware/auth"
+import { getMe } from "../controllers/auth.controller"
+import { protect } from "../middleware/auth.middleware"
 
 const router: IRouter = Router()
 

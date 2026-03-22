@@ -6,10 +6,10 @@ import "./types"
 import express, { Request, Response, NextFunction } from "express"
 import cors from "cors"
 import swaggerUi from "swagger-ui-express"
-import { sequelize } from "./config/db"
-import { swaggerSpec } from "./config/swagger"
-import authRoutes from "./routes/authRoutes"
-import userRoutes from "./routes/userRoutes"
+import { sequelize } from "./config/db.config"
+import { swaggerSpec } from "./config/swagger.config"
+import authRoutes from "./routes/auth.routes"
+import userRoutes from "./routes/user.routes"
 
 const app = express()
 

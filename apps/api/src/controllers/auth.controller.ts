@@ -1,6 +1,6 @@
 import { Request, Response } from "express"
-import * as authService from "../services/authService"
-import * as userService from "../services/userService"
+import * as authService from "../services/auth.service"
+import * as userService from "../services/user.service"
 import { AppError } from "../types"
 
 const signup = async (req: Request, res: Response): Promise<void> => {

@@ -4,7 +4,7 @@ import {
   login,
   refreshToken,
   logout,
-} from "../controllers/authController"
+} from "../controllers/auth.controller"
 
 const router: IRouter = Router()
 

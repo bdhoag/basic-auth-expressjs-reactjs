@@ -1,5 +1,5 @@
-import User from "./User"
-import RefreshToken from "./RefreshToken"
+import User from "./user.model"
+import RefreshToken from "./refresh-token.model"
 
 User.hasMany(RefreshToken, { foreignKey: "userId", onDelete: "CASCADE" })
 RefreshToken.belongsTo(User, { foreignKey: "userId" })
