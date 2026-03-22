@@ -112,6 +112,7 @@ export function NavUser() {
               onClick={() => logout()}
               disabled={isPending}
               className="cursor-pointer"
+              data-testid="logout-btn"
             >
               <LogOutIcon />
               {isPending ? "Signing out…" : "Log out"}
