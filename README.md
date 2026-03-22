@@ -1,4 +1,4 @@
-# Intern Assignment Full-Stack
+# Basic Auth Application With Express.js React.js
 
 A full-stack monorepo built with **Turborepo**, featuring a **React** (Vite) frontend and an **Express** backend with **PostgreSQL**.
 
