@@ -1,19 +1,19 @@
-FROM node:18-alpine
+FROM node:20-alpine
 
 WORKDIR /app
 
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
-
-COPY apps ./apps
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml turbo.json ./
+COPY apps/api ./apps/api
+COPY packages ./packages
 
 RUN npm install -g pnpm
 
-RUN pnpm install --filter ./apps/api...
+RUN pnpm install --frozen-lockfile
 
 WORKDIR /app/apps/api
 
 RUN pnpm build
 
-EXPOSE 5000
+EXPOSE 3000
 
 CMD ["node", "dist/server.js"]
