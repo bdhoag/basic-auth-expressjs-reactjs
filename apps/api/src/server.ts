@@ -1,10 +1,4 @@
-import path from "path"
-import dotenv from "dotenv"
-
-if (process.env.NODE_ENV !== "production") {
-  dotenv.config({ path: path.resolve(__dirname, "../../../.env") })
-}
-
+import "dotenv/config"
 import "./types"
 import express, { Request, Response, NextFunction } from "express"
 import cors from "cors"
