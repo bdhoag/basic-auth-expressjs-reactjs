@@ -26,7 +26,7 @@ app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
   res.status(500).json({ message: "Internal server error" })
 })
 
-const PORT = process.env.APP_PORT || 5000
+const PORT = process.env.APP_PORT || 3000
 
 const startServer = async (): Promise<void> => {
   try {
