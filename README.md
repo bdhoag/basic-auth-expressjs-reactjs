@@ -17,7 +17,7 @@ A full-stack monorepo built with **Turborepo**, featuring a **React** (Vite) fro
 | Backend  | Express 4, Sequelize, PostgreSQL                 |
 | UI       | shadcn/ui (shared package), Tailwind CSS         |
 | Tooling  | Turborepo, pnpm workspaces, TypeScript, Prettier |
-| Infra    | Docker Compose (API + Postgres + Adminer)        |
+| Infra    | Docker Compose (Postgres + Adminer)               |
 
 ## Prerequisites
 
@@ -82,27 +82,17 @@ docker compose up -d
 
 This spins up:
 
-| Service    | Port   | Description             |
-| ---------- | ------ | ----------------------- |
-| `postgres` | `5432` | PostgreSQL 15 database  |
-| `adminer`  | `9090` | Database admin UI       |
-| `backend`  | `3000` | API server (Dockerized) |
+| Service    | Port   | Description            |
+| ---------- | ------ | ---------------------- |
+| `postgres` | `5432` | PostgreSQL 15 database |
+| `adminer`  | `9090` | Database admin UI      |
 
 > The database tables are auto-created on API startup via `sequelize.sync()`.
 
 ### 5. Run the app (development)
 
-If you prefer running the API outside Docker for hot-reload:
-
 ```bash
-docker compose up postgres adminer -d   # start only DB + Adminer
-pnpm dev                                # starts both web & api via Turborepo
-```
-
-Or, if the backend is already running via Docker Compose, start only the frontend:
-
-```bash
-pnpm dev --filter=web
+pnpm dev    # starts both web & api via Turborepo
 ```
 
 The app will be available at:
@@ -139,6 +129,7 @@ basic-auth-expressjs-reactjs/
 │   │   │   ├── models/      # Sequelize models
 │   │   │   ├── routes/      # API routes
 │   │   │   ├── services/    # Business logic
+│   │   │   ├── app.ts       # Express app setup
 │   │   │   └── server.ts    # Entry point
 │   │   └── package.json
 │   └── web/                 # React SPA (Vite)
