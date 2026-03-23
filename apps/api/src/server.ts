@@ -1,11 +1,6 @@
 import "dotenv/config"
-import "./types"
-import swaggerUi from "swagger-ui-express"
 import { sequelize } from "./config/db.config"
-import { swaggerSpec } from "./config/swagger.config"
 import app from "./app"
-
-app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
 const PORT = process.env.APP_PORT || 3000
 
