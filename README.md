@@ -2,6 +2,8 @@
 
 A full-stack monorepo built with **Turborepo**, featuring a **React** (Vite) frontend and an **Express** backend with **PostgreSQL**.
 
+> **Note:** You must **register a new account** before logging in, both on the live demo and local development.
+
 ## Live Demo
 
 | App         | URL                                                                                                                                 |
@@ -42,13 +44,17 @@ pnpm install
 
 ### 3. Set up environment variables
 
-Copy the example env file at the project root:
+Copy the example env files:
 
 ```bash
 cp .env.example .env
+cp apps/api/.env.example apps/api/.env
+cp apps/web/.env.example apps/web/.env
 ```
 
-Then edit `.env` with your values:
+Then edit the values as needed:
+
+**Root `.env`** (Docker Compose & shared config):
 
 ```env
 # Database
@@ -68,7 +74,24 @@ JWT_REFRESH_EXPIRES_IN=15m
 APP_PORT=3000
 ```
 
-For the frontend, create `apps/web/.env.local`:
+**`apps/api/.env`**:
+
+```env
+DB_NAME=mydb
+DB_USER=postgres
+DB_PASS=123456
+DB_HOST=localhost
+DB_PORT=5432
+
+JWT_SECRET=secret123
+JWT_EXPIRES_IN=1m
+JWT_REFRESH_SECRET=refresh_secret_456
+JWT_REFRESH_EXPIRES_IN=15m
+
+APP_PORT=3000
+```
+
+**`apps/web/.env`**:
 
 ```env
 VITE_API_URL=http://localhost:3000
