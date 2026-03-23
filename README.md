@@ -148,7 +148,7 @@ basic-auth-expressjs-reactjs/
 │   │   ├── src/
 │   │   │   ├── config/      # DB & Swagger config
 │   │   │   ├── controllers/ # Route handlers
-│   │   │   ├── middleware/   # Auth middleware
+│   │   │   ├── middleware/  # Auth middleware
 │   │   │   ├── models/      # Sequelize models
 │   │   │   ├── routes/      # API routes
 │   │   │   ├── services/    # Business logic
