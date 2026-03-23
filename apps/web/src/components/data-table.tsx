@@ -460,7 +460,7 @@ export function DataTable({
                 })}
             </DropdownMenuContent>
           </DropdownMenu>
-          <Button variant="outline" size="sm">
+          <Button variant="outline" size="sm" data-testid="add-section-btn">
             <PlusIcon
             />
             <span className="hidden lg:inline">Add Section</span>
@@ -800,9 +800,9 @@ function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
           </form>
         </div>
         <DrawerFooter>
-          <Button>Submit</Button>
+          <Button data-testid="drawer-submit-btn">Submit</Button>
           <DrawerClose asChild>
-            <Button variant="outline">Done</Button>
+            <Button variant="outline" data-testid="drawer-done-btn">Done</Button>
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>
